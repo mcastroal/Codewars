@@ -10,8 +10,7 @@ function evenOrOdd(integer) {
 };
 
 console.log(evenOrOdd(6));
-
-//I felt very comfortable with this problem because all I had to do was make sure the number is divisible by 2, although it did work I am looking at other peoples examples and realized I could have added a curly bracket after the parentheses of my if statement so that my else wwould look like } else { which is what I am used to seeing 
+// I felt very comfortable with this problem because all I had to do was make sure the number is divisible by 2, although it did work I am looking at other peoples examples and realized I could have added a curly bracket after the parentheses of my if statement so that my else would look like } else { which is what I am used to seeing 
 
 //==============================
 //        2nd Problem!
@@ -21,17 +20,17 @@ console.log(evenOrOdd(6));
 function booleanToString(b){
     return b.toString()
 }
-
 // For this one it took me a few minutes to remember what the method was because I had done this function before but it was easy once I remembered
 
 //==============================
 //         3rd Problem!
 //==============================
-//Create a function that accepts a parameter representing a name and returns the message: "Hello, <name> how are you doing today?".
-function greet(name){
-  return `Hello, ${name} how are you doing today?`
+// Write a function findNeedle() that takes an array full of junk but containing one "needle" After your function finds the needle it should return a message (as a string) that says: "found the needle at position " plus the index it found the needle, so: "found the needle at position 6"
+function findNeedle(haystack) {
+  let position = haystack.indexOf("needle");
+  return `found the needle at position ${position}`
 }
-// This was too easy and I am considering bumping up the level at this point
+// This problem was pretty straighforward I just needed to find the position of the first/only instance of "needle" so I used indexOf method
 
 //==============================
 //         4th Problem!
@@ -49,7 +48,7 @@ function toCamelCase(str){
   }
   return camelCased;
 }
-// For this one I initially struggled because I started my loop from index 0 so the first word would show up twice, but then i edited it to start at the 1st index and included an if statement to skip any empty strings
+// For this one I initially struggled because I started my loop from index 0 so the first word would show up twice, but then I edited it to start at the 1st index and included an if statement to skip any empty strings
 
 //==============================
 //         5th Problem!
@@ -81,13 +80,33 @@ function validatePIN (pin) {
   }
   return true;
 }
-// I initially made a function that only checked if the pin length was 4 or 6 but then I failed the validation for number only, so I reefactored my code to include if statements
+// I initially made a function that only checked if the pin length was 4 or 6 but then I failed the validation for number only, so I refactored my code to include if statements. 
+
 //==============================
 //         7th Problem!
 //==============================
-
-
+// You are going to be given a non-empty string. Your job is to return the middle character(s) of the string. If the string's length is odd, return the middle character. If the string's length is even, return the middle 2 characters.
+function getMiddle(s) {
+  let lengths = s.length;
+  let middle = Math.floor(lengths / 2);
+  
+  if (lengths % 2 === 0){
+    return s[middle - 1] + s[middle];
+  } else {
+    return s[middle];
+  }
+}
+// This problem felt like an add on to problem #1, I used math.floor to find the middle index and used an if statement to handle the two conditions
 
 //==============================
 //         8th Problem!
 //==============================
+//Given a non-empty array of integers, return the result of multiplying the values together in order. Example: [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+function grow(x){
+  let result = 1;
+  for (let i = 0; i < x.length; i++){
+    result = result * x[i];
+  }
+  return result;
+}
+// This problem was straighforward, I knew I had to loop through the array and multiply each number together.
